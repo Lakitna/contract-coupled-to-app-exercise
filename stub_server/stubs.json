@@ -1,0 +1,97 @@
+[
+  {
+    "id": "P1",
+    "method": "GET",
+    "path": "/v1/geocode",
+    "query": { "city": "Amsterdam" },
+    "description": "geocode amsterdam",
+    "response": {
+      "status": 200,
+      "json": { "city": "Amsterdam", "lat": 52.3676, "lon": 4.9041, "country": "NL" }
+    }
+  },
+  {
+    "id": "P2",
+    "method": "GET",
+    "path": "/v1/current",
+    "query": { "city": "Amsterdam" },
+    "description": "current amsterdam",
+    "response": {
+      "status": 200,
+      "json": { "city": "Amsterdam", "temp_c": 7.5, "condition": "cloudy", "humidity": 82 }
+    }
+  },
+  {
+    "id": "P3",
+    "method": "GET",
+    "path": "/v1/forecast",
+    "query": { "city": "Amsterdam", "days": "3" },
+    "description": "forecast amsterdam 3 days",
+    "response": {
+      "status": 200,
+      "json": {
+        "city": "Amsterdam",
+        "days": [
+          { "date": "2026-10-17", "temp_c": 9.1, "condition": "cloudy" },
+          { "date": "2026-10-18", "temp_c": 10.4, "condition": "rain" },
+          { "date": "2026-10-19", "temp_c": 8.0, "condition": "sunny" }
+        ]
+      }
+    }
+  },
+  {
+    "id": "P4",
+    "method": "GET",
+    "path": "/v1/alerts",
+    "query": { "city": "Amsterdam" },
+    "description": "alerts amsterdam",
+    "response": {
+      "status": 200,
+      "json": { "city": "Amsterdam", "alerts": [] }
+    }
+  },
+  {
+    "id": "P5",
+    "method": "GET",
+    "path": "/v1/current",
+    "query": { "city": "Rotterdam" },
+    "description": "current rotterdam",
+    "response": {
+      "status": 200,
+      "json": { "city": "Rotterdam", "temp_c": 8.1, "condition": "rainy", "humidity": 90 }
+    }
+  },
+  {
+    "id": "P6",
+    "method": "GET",
+    "path": "/v1/air-quality",
+    "query": { "city": "Amsterdam" },
+    "description": "air quality amsterdam",
+    "response": {
+      "status": 200,
+      "json": { "city": "Amsterdam", "aqi": 42, "pm25": 8.3, "level": "good" }
+    }
+  },
+  {
+    "id": "L1",
+    "method": "GET",
+    "path": "/v1/history",
+    "query": { "city": "Amsterdam", "date": "2026-01-15" },
+    "description": "history amsterdam",
+    "response": {
+      "status": 200,
+      "json": { "city": "Amsterdam", "date": "2026-01-15", "temp_c": 3.2, "condition": "clear" }
+    }
+  },
+  {
+    "id": "L2",
+    "method": "GET",
+    "path": "/v1/current",
+    "query": { "city": "Utrecht" },
+    "description": "current utrecht unavailable",
+    "response": {
+      "status": 503,
+      "json": { "error": "service unavailable", "city": "Utrecht" }
+    }
+  }
+]

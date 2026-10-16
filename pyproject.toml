@@ -1,0 +1,14 @@
+[project]
+name = "weather-consumer"
+version = "0.1.0"
+description = "Weather API consumer with a local stub server and a generated contract"
+requires-python = ">=3.10"
+dependencies = [
+    "flask>=3.0",
+    "requests>=2.31",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]

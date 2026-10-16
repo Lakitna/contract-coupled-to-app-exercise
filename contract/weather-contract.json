@@ -1,0 +1,178 @@
+{
+  "consumer": "weather-app",
+  "provider": "weather-api",
+  "interactions": [
+    {
+      "description": "P1 geocode amsterdam",
+      "providerState": "geocode amsterdam",
+      "request": {
+        "method": "GET",
+        "path": "/v1/geocode",
+        "query": {
+          "city": "Amsterdam"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "city": "Amsterdam",
+          "lat": 52.3676,
+          "lon": 4.9041,
+          "country": "NL"
+        }
+      }
+    },
+    {
+      "description": "P2 current amsterdam",
+      "providerState": "current amsterdam",
+      "request": {
+        "method": "GET",
+        "path": "/v1/current",
+        "query": {
+          "city": "Amsterdam"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "city": "Amsterdam",
+          "temp_c": 7.5,
+          "condition": "cloudy",
+          "humidity": 82
+        }
+      }
+    },
+    {
+      "description": "P3 forecast amsterdam 3 days",
+      "providerState": "forecast amsterdam 3 days",
+      "request": {
+        "method": "GET",
+        "path": "/v1/forecast",
+        "query": {
+          "city": "Amsterdam",
+          "days": "3"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "city": "Amsterdam",
+          "days": [
+            {
+              "date": "2026-10-17",
+              "temp_c": 9.1,
+              "condition": "cloudy"
+            },
+            {
+              "date": "2026-10-18",
+              "temp_c": 10.4,
+              "condition": "rain"
+            },
+            {
+              "date": "2026-10-19",
+              "temp_c": 8.0,
+              "condition": "sunny"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "description": "P4 alerts amsterdam",
+      "providerState": "alerts amsterdam",
+      "request": {
+        "method": "GET",
+        "path": "/v1/alerts",
+        "query": {
+          "city": "Amsterdam"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "city": "Amsterdam",
+          "alerts": []
+        }
+      }
+    },
+    {
+      "description": "P5 current rotterdam",
+      "providerState": "current rotterdam",
+      "request": {
+        "method": "GET",
+        "path": "/v1/current",
+        "query": {
+          "city": "Rotterdam"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "city": "Rotterdam",
+          "temp_c": 8.1,
+          "condition": "rainy",
+          "humidity": 90
+        }
+      }
+    },
+    {
+      "description": "P6 air quality amsterdam",
+      "providerState": "air quality amsterdam",
+      "request": {
+        "method": "GET",
+        "path": "/v1/air-quality",
+        "query": {
+          "city": "Amsterdam"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "city": "Amsterdam",
+          "aqi": 42,
+          "pm25": 8.3,
+          "level": "good"
+        }
+      }
+    },
+    {
+      "description": "L1 history amsterdam",
+      "providerState": "history amsterdam",
+      "request": {
+        "method": "GET",
+        "path": "/v1/history",
+        "query": {
+          "city": "Amsterdam",
+          "date": "2026-01-15"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "city": "Amsterdam",
+          "date": "2026-01-15",
+          "temp_c": 3.2,
+          "condition": "clear"
+        }
+      }
+    },
+    {
+      "description": "L2 current utrecht unavailable",
+      "providerState": "current utrecht unavailable",
+      "request": {
+        "method": "GET",
+        "path": "/v1/current",
+        "query": {
+          "city": "Utrecht"
+        }
+      },
+      "response": {
+        "status": 503,
+        "body": {
+          "error": "service unavailable",
+          "city": "Utrecht"
+        }
+      }
+    }
+  ]
+}
